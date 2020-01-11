@@ -92,6 +92,8 @@ brew cask install 1password
 
 brew cask install docker
 
+brew cask install Slack
+
 brew cask install iterm2
 echo 'Now go set iTerm font to a Powerline font and set color preset to Solarized Dark'
 
