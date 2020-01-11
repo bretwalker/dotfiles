@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -17,18 +18,7 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-# Install Bash 4.
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
-# running `chsh`.
-brew install bash
-brew install bash-completion2
-
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
-fi;
+brew install gnu-sed
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -92,6 +82,18 @@ brew install git-lfs
 # brew install tree
 # brew install vbindiff
 # brew install zopfli
+
+brew cask install google-chrome
+brew cask install pycharm
+brew install python
+echo 'alias python=/usr/local/bin/python3' >> ~/.zshrc
+
+brew cask install 1password
+
+brew cask install docker
+
+brew cask install iterm2
+echo 'Now go set iTerm font to a Powerline font and set color preset to Solarized Dark'
 
 # Remove outdated versions from the cellar.
 brew cleanup

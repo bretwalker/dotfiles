@@ -12,7 +12,22 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
+
+	git clone https://github.com/powerline/fonts.git --depth=1
+	cd fonts
+	./install.sh
+	cd ..
+	rm -rf fonts
+
+	rm -rf ~/.oh-my-zsh
+	RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+	echo 'Updating .zshrc'
+	sed -i '' 's/robbyrussell/agnoster/' ~/.zshrc
+	sed -i '' 's/plugins=(git)/plugins=(git dotenv django python osx)/' ~/.zshrc
+	echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
+	
+	exec zsh -l
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
