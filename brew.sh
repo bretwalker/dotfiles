@@ -97,6 +97,7 @@ echo 'alias python=/usr/local/bin/python3' >> ~/.zshrc
 brew cask install 1password
 
 brew cask install docker
+brew cask install docker-clean
 brew install kubernetes-cli
 
 brew cask install google-cloud-sdk
