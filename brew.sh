@@ -83,6 +83,12 @@ brew install git-lfs
 # brew install vbindiff
 # brew install zopfli
 
+brew install node
+brew install nvm
+
+brew install jq
+brew install yq
+
 brew cask install google-chrome
 brew cask install pycharm
 brew install python
@@ -91,6 +97,9 @@ echo 'alias python=/usr/local/bin/python3' >> ~/.zshrc
 brew cask install 1password
 
 brew cask install docker
+brew install kubernetes-cli
+
+brew cask install google-cloud-sdk
 
 brew cask install iterm2
 echo 'Now go set iTerm font to a Powerline font and set color preset to Solarized Dark'
